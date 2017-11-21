@@ -461,11 +461,11 @@
                             <goals>
                                 <goal>jmeter</goal>
                             </goals>
-							<configuration>
-								<generateReports>true</generateReports>
-							</configuration>
                         </execution>
                     </executions>
+					<configuration>
+							<generateReports>true</generateReports>
+					</configuration>
                 </plugin>
         </plugins>
     </build>

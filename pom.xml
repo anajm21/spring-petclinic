@@ -464,33 +464,6 @@
                         </execution>
                     </executions>
                 </plugin>
-				 <plugin>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>pre-site</phase>
-                        <configuration>
-                            <tasks>
-                                <mkdir dir="${WORKSPACE}/target/jmeter/results/dashboard" />
-                                <copy file="${WORKSPACE}/src/test/resources/reportgenerator.properties" 
-									  tofile="${WORKSPACE}/target/jmeter/bin/reportgenerator.properties" />
-                                <copy todir="${WORKSPACE}/target/jmeter/bin/report-template">
-                                    <fileset dir="${WORKSPACE}/src/test/resources/report-template" />
-                                </copy>
-                                <java jar="${WORKSPACE}/target/jmeter/bin/ApacheJMeter-3.0.jar" fork="true">
-                                    <arg value="-g" />
-                                    <arg value="${WORKSPACE}/target/jmeter/results/*.jtl" />
-                                    <arg value="-o" />
-                                    <arg value="${WORKSPACE}/target/jmeter/results/dashboard/" />
-                                </java>
-                            </tasks>
-                        </configuration>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
     <reporting>

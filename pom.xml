@@ -454,13 +454,16 @@
 			<plugin>
                     <groupId>com.lazerycode.jmeter</groupId>
                     <artifactId>jmeter-maven-plugin</artifactId>
-                    <version>2.5.0</version>
+                    <version>2.2.0</version>
                     <executions>
                         <execution>
                             <id>jmeter-tests</id>
                             <goals>
                                 <goal>jmeter</goal>
                             </goals>
+							<configuration>
+								<generateReports>true</generateReports>
+							</configuration>
                         </execution>
                     </executions>
                 </plugin>
